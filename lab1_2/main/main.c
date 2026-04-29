@@ -41,6 +41,7 @@ void app_main(void)
            (chip_info.features & CHIP_FEATURE_EMB_FLASH) ? "embedded" : "external");
 
     printf("Minimum free heap size: %" PRIu32 " bytes\n", esp_get_minimum_free_heap_size());
+    printf("Tharuka Kodituwakku\n");
 
     for (int i = 10; i >= 0; i--) {
         printf("Restarting in %d seconds...\n", i);
