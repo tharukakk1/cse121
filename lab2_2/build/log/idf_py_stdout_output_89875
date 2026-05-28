@@ -1,0 +1,229 @@
+Command: /home/tharuka/.espressif/python_env/idf6.1_py3.12_env/bin/python /home/tharuka/Documents/CSE121/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/tharuka/Documents/CSE121/cse121/lab2_2/build/lab2_2.elf /home/tharuka/Documents/CSE121/cse121/lab2_2/build/bootloader/bootloader.elf -m '/home/tharuka/.espressif/python_env/idf6.1_py3.12_env/bin/python' '/home/tharuka/Documents/CSE121/esp/esp-idf/tools/idf.py'
+[0;32mI (231) spi_flash: flash io: dio[0m
+[0;33mW (234) spi_flash: Detected size(4096ESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004dc20
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xce0
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-3863-g338f341110 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Apr 29 2026 02:50:29[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=08ff4h ( 36852) map[0m
+[0;32mI (90) esp_image: segment 1: paddr=0001901c vaddr=3fc8b000 size=01954h (  6484) load[0m
+[0;32mI (93) esp_image: segment 2: paddr=0001a978 vaddr=40380000 size=056a0h ( 22176) load[0m
+[0;32mI (103) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=135d8h ( 79320) map[0m
+[0;32mI (119) esp_image: segment 4: paddr=00033600 vaddr=403856a0 size=057c8h ( 22472) load[0m
+[0;32mI (124) esp_image: segment 5: paddr=00038dd0 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (127) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (128) boot: Disabling RNG early entropy source...[0m
+[0;32mI (144) cpu_start: Unicore app[0m
+[0;32mI (153) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (153) cpu_start: Pro cpu start user code[0m
+[0;32mI (153) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (155) app_init: Application information:[0m
+[0;32mI (159) app_init: Project name:     lab2_2[0m
+[0;32mI (162) app_init: App version:      38c86d7-dirty[0m
+[0;32mI (167) app_init: Compile time:     Apr 29 2026 02:50:30[0m
+[0;32mI (172) app_init: ELF file SHA256:  f6b569b44...[0m
+[0;32mI (176) app_init: ESP-IDF:          v6.1-dev-3863-g338f341110[0m
+[0;32mI (182) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (186) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (190) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (193) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (200) heap_init: At 3FC8D900 len 00032700 (201 KiB): RAM[0m
+[0;32mI (205) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (211) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (217) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (223) spi_flash: detected chip: generic[0m
+[0;32mI (226) spi_flash: flash io: dio[0m
+[0;33mW (229) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (241) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (251) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (257) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (264) main_task: Started on CPU0[0m
+[0;32mI (264) main_task: Calling app_main()[0m
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 31% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 32% humidity
+Temperature is 29C (or 84F) with a 41% humidity
+Temperature is 29C (or 85F) with a 50% humidity
+Temperature is 30C (or 85F) with a 54% humidity
+Temperature is 30C (or 86F) with a 56% humidity
+Temperature is 30C (or 86F) with a 57% humidity
+Temperature is 30C (or 86F) with a 58% humidity
+Temperature is 30C (or 86F) with a 58% humidity
+Temperature is 30C (or 87F) with a 58% humidity
+Temperature is 30C (or 86F) with a 55% humidity
+Temperature is 30C (or 85F) with a 45% humidity
+Temperature is 29C (or 85F) with a 38% humidity
+Temperature is 29C (or 85F) with a 34% humidity
+Temperature is 29C (or 84F) with a 32% humidity
+Temperature is 29C (or 84F) with a 31% humidity
+Temperature is 29C (or 84F) with a 30% humidity
+Temperature is 29C (or 84F) with a 30% humidity
+Temperature is 29C (or 84F) with a 29% humidity
+Temperature is 29C (or 83F) with a 29% humidity
+Temperature is 28C (or 83F) with a 29% humidity
+Temperature is 28C (or 83F) with a 29% humidity
+Temperature is 28C (or 83F) with a 29% humidity
+Temperature is 28C (or 83F) with a 29% humidity
+Temperature is 28C (or 82F) with a 30% humidity
+Temperature is 28C (or 82F) with a 40% humidity
+Temperature is 27C (or 81F) with a 42% humidity
+Temperature is 27C (or 81F) with a 48% humidity
+Temperature is 27C (or 81F) with a 47% humidity
+Temperature is 27C (or 81F) with a 45% humidity
+Temperature is 27C (or 80F) with a 48% humidity
+Temperature is 27C (or 80F) with a 50% humidity
+Temperature is 27C (or 80F) with a 51% humidity
+Temperature is 26C (or 80F) with a 52% humidity
+Temperature is 26C (or 80F) with a 53% humidity
+Temperature is 26C (or 79F) with a 54% humidity
+Temperature is 26C (or 79F) with a 54% humidity
+Temperature is 26C (or 79F) with a 47% humidity
+Temperature is 26C (or 79F) with a 42% humidity
+Temperature is 26C (or 79F) with a 40% humidity
+Temperature is 26C (or 79F) with a 38% humidity
+Temperature is 26C (or 79F) with a 36% humidity
+Temperature is 26C (or 79F) with a 35% humidity
+Temperature is 26C (or 79F) with a 34% humidity
+Temperature is 26C (or 79F) with a 34% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 80F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 80F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 32% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
+Temperature is 26C (or 79F) with a 33% humidity
