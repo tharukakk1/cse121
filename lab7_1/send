@@ -1,0 +1,76 @@
+#!/usr/bin/env python3
+import sys
+import time
+import RPi.GPIO as GPIO
+
+LED_PIN = 17
+UNIT = 0.020  # 200 ms timing base
+
+MORSE_CODE_DICT = {
+    'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
+    'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
+    'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',    'O': '---',
+    'P': '.--.',  'Q': '--.-',  'R': '.-.',   'S': '...',   'T': '-',
+    'U': '..-',   'V': '...-',  'W': '.--',   'X': '-..-',  'Y': '-.--',
+    'Z': '--..',  '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+    '0': '-----'
+}
+
+def setup_gpio():
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(LED_PIN, GPIO.OUT)
+    GPIO.output(LED_PIN, GPIO.LOW)
+
+def flash(duration):
+    GPIO.output(LED_PIN, GPIO.HIGH)
+    time.sleep(duration)
+    GPIO.output(LED_PIN, GPIO.LOW)
+
+def transmit_morse(message):
+    for char in message.upper():
+        if char == ' ':
+            # Word space: 7 units total.
+            # We already sleep 3 units after the previous character, so add 4 more.
+            time.sleep(UNIT * 4)
+            continue
+            
+        if char in MORSE_CODE_DICT:
+            symbols = MORSE_CODE_DICT[char]
+            for i, symbol in enumerate(symbols):
+                if symbol == '.':
+                    flash(UNIT)          # Dot = 200ms
+                elif symbol == '-':
+                    flash(UNIT * 3)      # Dash = 600ms
+                
+                # Element space within a character = 200ms
+                if i < len(symbols) - 1:
+                    time.sleep(UNIT)
+            
+            # Letter gap space = 600ms (3 units)
+            time.sleep(UNIT * 3)
+
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: ./send <count> \"<message>\"")
+        sys.exit(1)
+        
+    try:
+        count = int(sys.argv[1])
+        message = sys.argv[2]
+    except ValueError:
+        print("Error: Count must be an integer.")
+        sys.exit(1)
+
+    setup_gpio()
+    
+    try:
+        for _ in range(count):
+            transmit_morse(message)
+            # Final padding gap at the end to ensure the receiver flushes perfectly
+            time.sleep(UNIT * 7)
+    finally:
+        GPIO.cleanup()
+
+if __name__ == '__main__':
+    main()
